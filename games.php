@@ -37,10 +37,13 @@ function mostraTabela($qtdeColunas, $consulta, $func){
 }
 function recuperaTabela($tabela){
 		$con = conectaDB();
-		$result  =  mysqli_query($con, "SELECT nome FROM ".$tabela);
+		$result  =  mysqli_query($con, "SELECT cod, nome FROM ".$tabela);
 		$retData  =  array();
 		while( $row = mysqli_fetch_array($result, MYSQLI_NUM) ){
-		  $retData[] = $row[0];
+		  $retData[] = [
+				'id' => $row[0],
+				'name' => $row[1],
+			];
 		}
 		echo json_encode($retData);
 		$con->close();
