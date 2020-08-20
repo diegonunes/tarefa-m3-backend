@@ -58,6 +58,13 @@ function mostraJogos(){
 		$con->close();
 }
 
+function mostraForums(){
+		$con = conectaDB();
+		$result = mysqli_query($con, "SELECT usuarios.nome, forum.titulo, forum.mensagem, forum.cod FROM forum,usuarios WHERE forum.codUsuario = usuarios.cod");
+		mostraTabela(3,$result,'Forum');
+		$con->close();
+}
+
 	if(@$_REQUEST['action'] == "recuperaCidades")     //recupera lista de nomes das cidades
 	{
 		recuperaTabela('cidades');
@@ -114,6 +121,10 @@ function mostraJogos(){
 		if(@$_REQUEST['action'] == "mostraJogos")
 	{
 		mostraJogos();
+	}
+	if(@$_REQUEST['action'] == "mostraForums")
+	{
+		mostraForums();
 	}
 ?>
 
