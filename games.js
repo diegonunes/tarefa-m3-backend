@@ -14,6 +14,7 @@ function ajaxCall(stringCall, callback) {
 function inicializa() {
   ajaxCall('games.php?action=recuperaCidades', inicializaSelecaoCidades);
   ajaxCall('games.php?action=recuperaFabricantes', inicializaSelecaoFabricantes);
+  ajaxCall('games.php?action=recuperaRemetentes', inicializaSelecaoRemetentes);
   ajaxCall('games.php?action=mostraUsuarios', listaUsuarios);
   ajaxCall('games.php?action=mostraJogos', listaJogos);
   ajaxCall('games.php?action=mostraForums', listaForums);
@@ -74,6 +75,9 @@ function inicializaSelecaoFabricantes(lisFabricantes) {
 }
 function listaUsuarios(lisUsuarios) {
   document.getElementById('tab_usuarios').innerHTML = lisUsuarios;
+}
+function inicializaSelecaoRemetentes(lisRemetentes) {
+  inicializaSelecao(lisRemetentes, 'listaRemetentes');
 }
 function listaJogos(lisJogos) {
   document.getElementById('tab_jogos').innerHTML = lisJogos;

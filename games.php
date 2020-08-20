@@ -76,6 +76,10 @@ function mostraForums(){
 	{
 		recuperaTabela('fabricantes');
 	}
+	if(@$_REQUEST['action'] == "recuperaRemetentes")     //recupera lista de nomes das cidades
+	{
+		recuperaTabela('usuarios');
+	}
 	if(@$_REQUEST['action'] == "ins")  //insere novo Usuario
 	{
 		$con = conectaDB();
