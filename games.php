@@ -131,6 +131,13 @@ function mostraForums(){
 		$con->close();
 		mostraJogos();
 	}
+	if(@$_REQUEST['action'] == "delForum") //remove Jogo
+	{
+		$con = conectaDB();
+		$res = mysqli_query($con,"DELETE FROM forum WHERE forum.cod  =  ".$_REQUEST['id']);
+		$con->close();
+		mostraForums();
+	}
 
 	if(@$_REQUEST['action'] == "mostraUsuarios")
 	{

@@ -67,6 +67,9 @@ function deletaUsuario(codUsuario) {
 function deletaJogo(codJogo) {
   ajaxCall('games.php?action=delJogo&id=' + codJogo, listaJogos);
 }
+function deletaForum(codForum) {
+  ajaxCall('games.php?action=delForum&id=' + codForum, listaForums);
+}
 function inicializaSelecao(lis, elemento) {
   var x = document.getElementById(elemento);
   var jsonData = JSON.parse(lis);
