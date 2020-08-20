@@ -60,8 +60,8 @@ function inicializaSelecao(lis, elemento) {
 
   for (i = 0; i < jsonData.length; i++) {
     var option = document.createElement('option');
-    option.text = jsonData[i];
-    option.value = i + 1;
+    option.text = jsonData[i]['name'];
+    option.value = jsonData[i]['id'];
     if (i == 0) option.selected = true;
     x.add(option);
   }
