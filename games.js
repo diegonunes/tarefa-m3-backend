@@ -47,7 +47,19 @@ function insereJogo() {
   document.getElementById('i_cla').value = '';
 
   parms = '&jogo=' + i_jog + '&fab=' + i_fab + '&preco=' + i_pre + '&class=' + i_cla;
-  ajaxCall('games.php?action=insJogo' + parms, listaJogos);
+  ajaxCall('games.php?action=insForum' + parms, listaJogos);
+}
+function insereForum() {
+  var i_titulo = document.getElementById('i_titulo').value;
+  var i_mensagem = document.getElementById('i_mensagem').value;
+  var i_remetente = document.getElementById('listaRemetentes').value;
+  //limpeza dos campos do form
+  document.getElementById('i_titulo').value = '';
+  document.getElementById('i_mensagem').value = '';
+  document.getElementById('listaRemetentes').value = 0;
+
+  parms = '&titulo=' + i_titulo + '&mensagem=' + i_mensagem + '&remetente=' + i_remetente;
+  ajaxCall('games.php?action=insForum' + parms, listaForums);
 }
 function deletaUsuario(codUsuario) {
   ajaxCall('games.php?action=del&id=' + codUsuario, listaUsuarios);

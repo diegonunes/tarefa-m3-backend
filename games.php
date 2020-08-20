@@ -106,6 +106,17 @@ function mostraForums(){
 		$con->close();
 		mostraJogos();
 	}
+	if(@$_REQUEST['action'] == "insForum") //insere novo Forum
+	{
+		$con = conectaDB();
+		$titulo = $con->real_escape_string($_REQUEST['titulo']);
+		$mensagem = $con->real_escape_string($_REQUEST['mensagem']);
+		$remetente = $con->real_escape_string($_REQUEST['remetente']);
+
+		mysqli_query($con,"INSERT INTO forum (codUsuario,titulo,mensagem) VALUES('$remetente','$titulo','$mensagem');");
+		$con->close();
+		mostraForums();
+	}
 	if(@$_REQUEST['action'] == "del")     //remove Usuario
 	{
 		$con = conectaDB();
