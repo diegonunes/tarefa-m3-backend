@@ -47,7 +47,7 @@ function insereJogo() {
   document.getElementById('i_cla').value = '';
 
   parms = '&jogo=' + i_jog + '&fab=' + i_fab + '&preco=' + i_pre + '&class=' + i_cla;
-  ajaxCall('games.php?action=insJogos' + parms, listaJogos);
+  ajaxCall('games.php?action=insJogo' + parms, listaJogos);
 }
 function insereForum() {
   var i_titulo = document.getElementById('i_titulo').value;
